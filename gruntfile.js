@@ -44,6 +44,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'assets/js/plugins.min.js': [
+	        'assets/js/bootstrap.js',
             'assets/js/vendor/*.js'
           ],
           'assets/js/main.min.js': [
@@ -57,10 +58,12 @@ module.exports = function(grunt) {
       },
       dev: {
       	options: {
-	      	beautify: true
+	      	beautify: true,
+	      	preserveComments: true
       	},
 	     files: {
           'assets/js/plugins.min.js': [
+	        'assets/js/bootstrap.js',
             'assets/js/vendor/*.js'
           ],
           'assets/js/main.min.js': [
@@ -82,6 +85,7 @@ module.exports = function(grunt) {
       js: {
         files: [
           'assets/js/scritps_head/*.js',
+          'assets/js/bootstrap.js',
           'assets/js/inc/*.js',
           'assets/js/main.js',
           'assets/js/plugins.js'
@@ -89,7 +93,7 @@ module.exports = function(grunt) {
         tasks: [ 'uglify:dev']
       },
       livereload: {
-		  files: ['assets/css/*.css', '*.html', '*.php', 'templates/*.php', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
+		  files: ['assets/css/*.css', '*.html', '*.php', 'lib/*.php', 'templates/*.php', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
 		  options: {
 			  livereload: true,
 		},

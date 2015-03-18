@@ -1,13 +1,13 @@
-# Fondamenta theme
+# Fondamenta theme + Bootstrap
 
 Fondamenta is a starting WordPress theme made for developers that’s based on
-[HTML5 Boilerplate](http://html5boilerplate.com/) with the addedd goodness of Compass, Sassaparrilla and Susy Grids.
+[HTML5 Boilerplate](http://html5boilerplate.com/) with the addedd goodness of Compass, Sassaparrilla and Bootstrap.
 
-* Source: [https://github.com/federicovezzoli/wp-fondamenta](https://github.com/federicovezzoli/wp-fondamenta)
+* Source: [https://github.com/federicovezzoli/wp-fondamenta](https://github.com/federicovezzoli/wp-fondamenta-bootstrap)
 
 ## Installation
 
-* Clone the git repo - `git clone git@github.com:federicovezzoli/wp-fondamenta.git` - or [download it](https://github.com/federicovezzoli/wp-fondamenta.git)
+* Clone the git repo - `git clone git@github.com:federicovezzoli/wp-fondamenta.git` - or [download it](https://github.com/federicovezzoli/wp-fondamenta-bootstrap.git)
 * Reference the [theme activation](doc/activation.md) documentation to understand
 everything that happens once you activate Fondamenta
 
@@ -27,4 +27,4 @@ Edit `lib/init.php` to setup custom navigation menus and post thumbnail sizes.
 * HTML5 Boilerplate’s markup
 * TGM library for required plugins
 * Compass for styling
-* Susy Grids for responsive grids
+* Bootstrap

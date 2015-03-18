@@ -1,9 +1,9 @@
 {
-  "name": "WP-Fondamenta",
+  "name": "WP-Fondamenta-Bootstrap",
   "version": "0.8.1",
   "author": "DOT agency <federico@dot-agency.it>",
   "homepage": "http://dot-agency.it",
-  "description": "Starter theme for WordPress",
+  "description": "Starter theme for WordPress + bootstrap",
   "contributors": [
     {
       "name": "Federico Vezzoli",
@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:federicovezzoli/wp-fondamenta.git"
+    "url": "git@github.com:federicovezzoli/wp-fondamenta-bootstrap.git"
   },
   "engines": {
     "node": ">= 0.10.0"

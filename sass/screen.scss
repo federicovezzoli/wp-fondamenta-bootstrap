@@ -1,16 +1,12 @@
 // ::Imports pre-render. Must be after reset
 // ------------------------------------------------------------
-@import "susy";
+//@import "susy";
 @import "libs/required";
 @import "libs/reset";
 @import "libs/settings";
 @import "libs/mixins";
 @import "libs/placeholders";
 @import "breakpoint";
-
-// Use SASS globbing to import all _.scss files in the module folder.
-// These should be independent modules that follow the BEM/SMACSS way
-@import "modules/*";
 
 /* ::Base styles */
 /* ------------------------------------------------------------ */
@@ -48,16 +44,17 @@ a {
 @import "libs/typography"; 					// Base level typography
 @import "libs/forms";						// Forms
 @import "add-ons/module-typeset"; 			// Specific typesetting
+@import "bootstrap-custom";					// bootstrap
+
+// Use SASS globbing to import all _.scss files in the module folder.
+// These should be independent modules that follow the BEM/SMACSS way
+@import "modules/*";
+
 
 /* main container */
 .container {
-	@include container;
 	@include clearfix;
 }
-
-
-
-
 
 
 // ------------------------------------------------------------

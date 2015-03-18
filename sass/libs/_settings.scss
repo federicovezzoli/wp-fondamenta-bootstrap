@@ -18,9 +18,9 @@
 $a-vp								: 300px;	// first viewport
 $b-vp								: 420px;	// up one
 $c-vp								: 600px;	// up two
-$d-vp								: 900px;	// up three
-$e-vp								: 1100px;	// up four
-$f-vp								: 1300px;	// up five
+$d-vp								: 768px;    //: 900px;	// up three
+$e-vp							    : 992px;	//: 1100px;	// up four
+$f-vp								: 1200px;	//: 1300px;	// up five
 $ie-fixed-vp						: 980px;    // Viewport for IE fixed width
 
 $max-vp 							: $f-vp; 	// max viewport. Syntactically makes for a nicer option
@@ -30,41 +30,34 @@ $max-vp 							: $f-vp; 	// max viewport. Syntactically makes for a nicer option
 // This variable is used in the grid to dictate when you make that switch
 $start-columns 						: $b-vp;
 
-// ------------------------------------------------------------
-// :: Susy
-// ------------------------------------------------------------
-
-$susy: (
-  columns: 4,
-  gutters: 1/8,
-  gutter-position: after
-);
-
 
 // ------------------------------------------------------------
 
 
 // Define your main colour palette using whatever naming system you like
-$jack-black							: #333;
-$macy-grey							: #777;
-$ron-burgundy 						: #e0006e;
-$al-green 							: #67b2b1;
-$beige-ruth 						: #f5f0e0;
-$agent-orange 						: #c64f24;
-$betty-blue 						: #a8d9f4;
+$black							: #212121; //palette
+$white							: #fff; //#fffce4; //palette
+$green 							: #424242; //palette
+$lightgreen						: #AEEA00; //#b8b530; //palette
+$red							: #da4036; //palette
+$grey							: #E0E0E0; //#555;
+$lightgrey						: #EEEEEE; //#eaeaea;
+$purple							: #673AB7;
+$blue							: #2196F3;
+$orange							: #FF9800;
 
 
 // Assign colours to variable roles
 // Be descriptive without being specific.
 // This allows for consistency project to project, and easy changing
 
-$body-color 						: #fff;
-$base-color							: $macy-grey;
-$heading-color						: $jack-black;
-$hightlight-color 					: $betty-blue;
+$body-color 						: $white + 20; //$white;
+$base-color							: $black;
+$heading-color						: $black;
+$hightlight-color 					: $lightgreen;
 
-$action								: $agent-orange;
-$action-respond						: $al-green;
+$action								: $purple;
+$action-respond						: $purple - 30;
 
 
 // ------------------------------------------------------------
@@ -86,7 +79,7 @@ $iota 		: 14px;
 $kappa 		: 12px;
 
 
-$para		: $theta; 	// Paragraph size
+$para		: $eta; 	// Paragraph size
 $quote		: $beta;	// Quote size
 
 
