@@ -65,6 +65,13 @@ function my_theme_register_required_plugins() {
 			'required' 	=> true
 		),
 
+		//ithemes security
+		array(
+			'name' 		=> 'iThemes Security',
+			'slug' 		=> 'better-wp-security',
+			'required' 	=> false
+		),
+
 		//W3 Total Cache
 		array(
 			'name' 		=> 'W3 Total Cache',
@@ -84,6 +91,7 @@ function my_theme_register_required_plugins() {
 			'name'        => 'WordPress SEO by Yoast',
 			'slug'        => 'wordpress-seo',
 			'is_callable' => 'wpseo_init',
+			'required' 	  => true
 		),
 
 		//ACF
@@ -100,6 +108,17 @@ function my_theme_register_required_plugins() {
 			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/acf-repeater.zip', // The plugin source.
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		),
+
+		//Gravity Forms
+		array(
+			'name'               => 'Gravity Forms', // The plugin name.
+			'slug'               => 'gravityforms', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/gravityforms-1.9.13.4.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'version'            => '1.9.13.4', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
