@@ -38,6 +38,23 @@ a {
 	}
 }
 
+.svg-wrapper {
+	width: 100%;
+	display: block;
+	height: auto;
+	position: relative;
+	padding-top: 100%; /* SQUARED */
+	@include base_transition();
+
+	svg {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
 /* ::Import styles */
 /* ------------------------------------------------------------ */
 
