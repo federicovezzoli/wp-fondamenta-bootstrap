@@ -1,5 +1,10 @@
 ## HEAD
 
+## 0.8.2 - 14 May 2016
+- updated grunt tasks
+- added a basic homepage template
+- 
+
 ## 0.8.1 - 18 October 2013
 - addedd the tgm library
 - addedd some files to the lib structure
