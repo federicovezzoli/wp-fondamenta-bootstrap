@@ -106,8 +106,47 @@ function my_theme_register_required_plugins() {
 			'name'               => 'ACF Repeater', // The plugin name.
 			'slug'               => 'acf-repeater', // The plugin slug (typically the folder name).
 			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/acf-repeater.zip', // The plugin source.
-			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		),
+
+		//ACF Flexible content
+		array(
+			'name'               => 'ACF Flexible Content', // The plugin name.
+			'slug'               => 'acf-flexible-content', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/acf-flexible-content.zip', // The plugin source.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		),
+
+		//ACF Gallery
+		array(
+			'name'               => 'ACF Gallery', // The plugin name.
+			'slug'               => 'acf-gallery', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/acf-gallery.zip', // The plugin source.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		),
+
+		//ACF Options Page
+		array(
+			'name'               => 'ACF Options Page', // The plugin name.
+			'slug'               => 'acf-options-page', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/acf-options-page.zip', // The plugin source.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		),
+
+		//ACF Gravity Forms
+		array(
+			'name'               => 'ACF Gravity', // The plugin name.
+			'slug'               => 'acf-gravity', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/acf-gravity.zip', // The plugin source.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
@@ -116,9 +155,8 @@ function my_theme_register_required_plugins() {
 		array(
 			'name'               => 'Gravity Forms', // The plugin name.
 			'slug'               => 'gravityforms', // The plugin slug (typically the folder name).
-			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/gravityforms-1.9.13.4.zip', // The plugin source.
-			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-			'version'            => '1.9.13.4', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/gravityforms.zip', // The plugin source.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
@@ -127,9 +165,8 @@ function my_theme_register_required_plugins() {
 		array(
 			'name'               => 'WP Migrate DB Pro', // The plugin name.
 			'slug'               => 'wp-migrate-db-pro', // The plugin slug (typically the folder name).
-			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/wp-migrate-db-pro-1.5.1.zip', // The plugin source.
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/wp-migrate-db-pro.zip', // The plugin source.
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-			'version'            => '1.5.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
@@ -138,13 +175,39 @@ function my_theme_register_required_plugins() {
 		array(
 			'name'               => 'WP Migrate DB Pro Media Files', // The plugin name.
 			'slug'               => 'wp-migrate-db-pro-media-files', // The plugin slug (typically the folder name).
-			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/wp-migrate-db-pro-media-files-1.3.3.zip', // The plugin source.
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/wp-migrate-db-pro-media-files.zip', // The plugin source.
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-			'version'            => '1.3.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
 
+		//iubenda
+		array(
+			'name'               => 'Iubenda Cookie Solution', // The plugin name.
+			'slug'               => 'iubenda-cookie-law-solution', // The plugin slug (typically the folder name).
+			'required'           => true // If false, the plugin is only 'recommended' instead of required.
+		),
+
+		//Cloudflare
+		array(
+			'name'               => 'Cloudflare', // The plugin name.
+			'slug'               => 'cloudflare', // The plugin slug (typically the folder name).
+			'required'           => false // If false, the plugin is only 'recommended' instead of required.
+		),
+
+		//Woocommerce
+		array(
+			'name'               => 'WooCommerce', // The plugin name.
+			'slug'               => 'woocommerce', // The plugin slug (typically the folder name).
+			'required'           => false // If false, the plugin is only 'recommended' instead of required.
+		),
+
+		//WP Optimize
+		array(
+			'name'               => 'WP-Optimize', // The plugin name.
+			'slug'               => 'wp-optimize', // The plugin slug (typically the folder name).
+			'required'           => false // If false, the plugin is only 'recommended' instead of required.
+		),
 	);
 
 	/*
