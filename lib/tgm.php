@@ -208,6 +208,54 @@ function my_theme_register_required_plugins() {
 			'slug'               => 'wp-optimize', // The plugin slug (typically the folder name).
 			'required'           => false // If false, the plugin is only 'recommended' instead of required.
 		),
+
+		//WPML gravity
+		array(
+			'name'               => 'gravity forms multilingual', // The plugin name.
+			'slug'               => 'gravityforms-multilingual', // The plugin slug (typically the folder name).
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/gravityforms-multilingual.zip', // The plugin source.
+		),
+
+		//WPML
+		array(
+			'name'               => 'WPML', // The plugin name.
+			'slug'               => 'sitepress-multilingual-cms', // The plugin slug (typically the folder name).
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/sitepress-multilingual-cms.zip', // The plugin source.
+		),
+
+		//WPML string translations
+		array(
+			'name'               => 'WPML string translations', // The plugin name.
+			'slug'               => 'wpml-string-translations', // The plugin slug (typically the folder name).
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/wpml-string-translation.zip', // The plugin source.
+		),
+
+		//WPML translations management
+		array(
+			'name'               => 'WPML translations management', // The plugin name.
+			'slug'               => 'wpml-translations management', // The plugin slug (typically the folder name).
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/wpml-translation-management.zip', // The plugin source.
+		),
+
+		//WPML woocommerce
+		array(
+			'name'               => 'WooCommerce Multilingual', // The plugin name.
+			'slug'               => 'woocommerce-multilingual', // The plugin slug (typically the folder name).
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/woocommerce-multilingual.zip', // The plugin source.
+		),
+
+		//WPML media
+		array(
+			'name'               => 'WPML Media', // The plugin name.
+			'slug'               => 'wpml-media', // The plugin slug (typically the folder name).
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'source'             => get_template_directory_uri() . '/lib/tgm/plugins/wpml-media.zip', // The plugin source.
+		),
 	);
 
 	/*
