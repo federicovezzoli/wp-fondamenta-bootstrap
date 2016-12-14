@@ -19,6 +19,24 @@ define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
 
 
 /*-----------------------------------------------------------------------------------*/
+/* settaggio di iubenda per avere il banner nel footer e disattivare lo styling di default */
+/*-----------------------------------------------------------------------------------*/
+
+/* <script type="text/javascript">
+	var _iub = _iub || [];
+	_iub.csConfiguration = {
+		cookiePolicyId: 7952970,
+		siteId: 338686,
+		lang: "en",
+banner: {
+      slideDown: false,
+      applyStyles: false
+    }
+	};
+</script>
+<script type="text/javascript" src="//cdn.iubenda.com/cookie_solution/safemode/iubenda_cs.js" charset="UTF-8" async></script> */
+
+/*-----------------------------------------------------------------------------------*/
 /* grunt-wp-version script da usare in version.js */
 /*-----------------------------------------------------------------------------------*/
 

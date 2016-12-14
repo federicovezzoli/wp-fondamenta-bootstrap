@@ -27,6 +27,15 @@ body {
 	color: $base-color;
 }
 
+/* ::Import styles */
+/* ------------------------------------------------------------ */
+
+@import "bootstrap-custom";					// bootstrap
+@import "libs/typography"; 					// Base level typography
+@import "libs/forms";						// Forms
+@import "add-ons/module-typeset"; 			// Specific typesetting
+@import "add-ons/iubenda"; 					// Iubenda
+
 a {
 	color: $action;
 	text-decoration: none;
@@ -54,14 +63,6 @@ a {
 		left: 0;
 	}
 }
-
-/* ::Import styles */
-/* ------------------------------------------------------------ */
-
-@import "libs/typography"; 					// Base level typography
-@import "libs/forms";						// Forms
-@import "add-ons/module-typeset"; 			// Specific typesetting
-@import "bootstrap-custom";					// bootstrap
 
 // Use SASS globbing to import all _.scss files in the module folder.
 // These should be independent modules that follow the BEM/SMACSS way
