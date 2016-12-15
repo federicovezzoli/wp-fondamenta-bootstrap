@@ -19,6 +19,31 @@ define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
 
 
 /*-----------------------------------------------------------------------------------*/
+/* git-ftp settings per .git/config */
+/*-----------------------------------------------------------------------------------*/
+
+/*
+[git-ftp]
+    user = xxxxxxx
+    url = ftp.xxxxxx.it/public_html/content/
+    password = xxxxxxxxx
+*/
+
+/*-----------------------------------------------------------------------------------*/
+/* ACF Google Maps API */
+/*-----------------------------------------------------------------------------------*/
+
+function my_acf_google_map_api( $api ){
+
+	$api['key'] = 'xxx';
+
+	return $api;
+
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+/*-----------------------------------------------------------------------------------*/
 /* settaggio di iubenda per avere il banner nel footer e disattivare lo styling di default */
 /*-----------------------------------------------------------------------------------*/
 
