@@ -8,7 +8,7 @@
 
   <div class="wrap" role="document">
 
-      <div class="main <?php echo roots_main_class(); ?>" role="main">
+      <div class="main" role="main">
         <?php include roots_template_path(); ?>
       </div><!-- /.main -->
 
@@ -21,6 +21,9 @@
   </div><!-- /.wrap -->
 
   <?php get_template_part('templates/footer'); ?>
+
+   <!-- Google Maps -->
+   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;key=AIzaSyANE6s8C1oj696ydpdPzWVtWAEMoMVi0p8"></script>
 
   <?php wp_footer(); ?>
 </body>
