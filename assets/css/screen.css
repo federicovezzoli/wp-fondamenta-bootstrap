@@ -8562,54 +8562,6 @@ strong, b {
 em, i, q {
   font-style: italic; }
 
-/* line 6, ../../sass/libs/_forms.scss */
-label, legend, select {
-  display: block; }
-
-/* line 10, ../../sass/libs/_forms.scss */
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none; }
-
-/* line 15, ../../sass/libs/_forms.scss */
-textarea {
-  overflow: auto;
-  vertical-align: top; }
-
-/* line 21, ../../sass/libs/_forms.scss */
-input[type="radio"],
-input[type="checkbox"] {
-  margin: 4px 0 0;
-  margin-top: 1px \9;
-  *margin-top: 0;
-  line-height: normal;
-  cursor: pointer; }
-
-/* line 30, ../../sass/libs/_forms.scss */
-input[type="file"],
-input[type="image"],
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto; }
-
-/* line 40, ../../sass/libs/_forms.scss */
-select,
-input[type="file"] {
-  *margin-top: 4px;
-  /* In IE7, the height of the select element cannot be changed by height, only font-size */ }
-
-/* line 45, ../../sass/libs/_forms.scss */
-select:focus,
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-  outline: thin dotted #333;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px; }
-
 /* line 9, ../../sass/add-ons/_module-typeset.scss */
 .as-heading__headline, .is-typeset .headline {
   font-size: 2.625em;
@@ -8711,6 +8663,54 @@ input[type="checkbox"]:focus {
 .as-blockquote--typeset, .is-typeset blockquote {
   margin: 0.825em 0; }
 
+/* line 6, ../../sass/libs/_forms.scss */
+label, legend, select {
+  display: block; }
+
+/* line 10, ../../sass/libs/_forms.scss */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none; }
+
+/* line 15, ../../sass/libs/_forms.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+/* line 21, ../../sass/libs/_forms.scss */
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  *margin-top: 0;
+  line-height: normal;
+  cursor: pointer; }
+
+/* line 30, ../../sass/libs/_forms.scss */
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto; }
+
+/* line 40, ../../sass/libs/_forms.scss */
+select,
+input[type="file"] {
+  *margin-top: 4px;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */ }
+
+/* line 45, ../../sass/libs/_forms.scss */
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px; }
+
 /* cookie banner related styles below */
 /***************************************************************************
 // * Iubenda Cookie Solution                                               *
@@ -8780,14 +8780,822 @@ input[type="checkbox"]:focus {
   font-size: 14px;
   font-weight: 900; }
 
-/* line 35, ../../sass/screen.scss */
+/**
+ * BxSlider v4.1.2 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2014
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+/** RESET AND LAYOUT
+===================================*/
+/* line 17, ../../sass/libs/_bxslider.scss */
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto 60px;
+  padding: 0;
+  *zoom: 1; }
+
+/* line 24, ../../sass/libs/_bxslider.scss */
+.bx-wrapper img {
+  max-width: 100%;
+  display: block; }
+
+/** THEME
+===================================*/
+/* line 32, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  transform: translatez(0); }
+
+/* line 48, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%; }
+
+/* LOADER */
+/* line 57, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000; }
+
+/* PAGER */
+/* line 70, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px; }
+
+/* line 79, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline; }
+
+/* line 86, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #666;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+
+/* line 99, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: #000; }
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+/* line 106, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-prev {
+  left: 10px; }
+
+/* line 111, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-next {
+  right: 10px; }
+
+/* line 116, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-prev:hover {
+  background-position: 0 0; }
+
+/* line 120, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-next:hover {
+  background-position: -43px 0; }
+
+/* line 124, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999; }
+
+/* line 135, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none; }
+
+/* AUTO CONTROLS (START / STOP) */
+/* line 141, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-controls-auto {
+  text-align: center; }
+
+/* line 145, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url(images/controls.png) -86px -11px no-repeat;
+  margin: 0 3px; }
+
+/* line 155, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active {
+  background-position: -86px 0; }
+
+/* line 160, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url(images/controls.png) -86px -44px no-repeat;
+  margin: 0 3px; }
+
+/* line 170, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active {
+  background-position: -86px -33px; }
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+/* line 177, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%; }
+
+/* line 182, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px; }
+
+/* IMAGE CAPTIONS */
+/* line 189, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666 \9;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%; }
+
+/* line 198, ../../sass/libs/_bxslider.scss */
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px; }
+
+/*!
+ * Strip - An Unobtrusive Responsive Lightbox - v1.6.4
+ * (c) 2014-2016 Nick Stakenburg
+ *
+ * http://www.stripjs.com
+ *
+ * Licensing:
+ * - Commercial: http://www.stripjs.com/license
+ * - Non-commercial: http://creativecommons.org/licenses/by-nc-nd/3.0
+ */
+/* line 12, ../../sass/libs/_strip.scss */
+.strp-window {
+  position: fixed;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #292929;
+  font: 13px/20px "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, sans-serif; }
+
+/* line 21, ../../sass/libs/_strip.scss */
+.strp-window.strp-vertical {
+  height: 0;
+  width: 100%; }
+
+/* margin is added around the window to keep a visual reference
+ * to the underlying page at all times.
+ */
+/* line 29, ../../sass/libs/_strip.scss */
+.strp-window {
+  margin-left: 40px; }
+
+/* line 30, ../../sass/libs/_strip.scss */
+.strp-window.strp-vertical {
+  margin-left: 0;
+  margin-bottom: 40px; }
+
+/* fullscreen on smaller screens (iPhone 6+ and smaller)
+ * since min-width is used to make this work it won't show on IE8, but
+ * we're not expecting that browser to have a mobile sized screen anyway
+ */
+@media all and (max-width: 414px) and (orientation: portrait), all and (max-width: 736px) and (max-height: 414px) {
+  /* line 38, ../../sass/libs/_strip.scss */
+  .strp-window.strp-horizontal {
+    min-width: 100%; } }
+@media all and (max-height: 414px) and (orientation: landscape), all and (max-height: 736px) and (max-width: 414px) {
+  /* line 42, ../../sass/libs/_strip.scss */
+  .strp-window.strp-vertical {
+    min-height: 100%; } }
+/* z-index */
+/* line 47, ../../sass/libs/_strip.scss */
+.strp-window,
+.strp-spinner-move {
+  z-index: 99999; }
+
+/* reset box-sizing */
+/* line 53, ../../sass/libs/_strip.scss */
+.strp-window,
+.strp-window [class^='strp-'],
+.strp-spinner-move,
+.strp-spinner-move [class^='strp-'] {
+  box-sizing: border-box; }
+
+/* Chrome hack, this fixes a visual glitch when quickly toggling a video */
+/* line 61, ../../sass/libs/_strip.scss */
+.strp-window {
+  transform: translateZ(0px); }
+
+/* some properties on the window are used to toggle things
+ * like margin and the fullscreen mode,
+ * we reset those properties after measuring them
+ */
+/* line 67, ../../sass/libs/_strip.scss */
+.strp-measured {
+  margin: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important; }
+
+/* line 73, ../../sass/libs/_strip.scss */
+.strp-pages {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+/* sides */
+/* line 81, ../../sass/libs/_strip.scss */
+.strp-side-right {
+  top: 0;
+  right: 0; }
+
+/* line 82, ../../sass/libs/_strip.scss */
+.strp-side-right .strp-pages {
+  top: 0;
+  right: 0; }
+
+/* line 83, ../../sass/libs/_strip.scss */
+.strp-side-right .strp-page {
+  top: 0;
+  right: 0; }
+
+/* line 84, ../../sass/libs/_strip.scss */
+.strp-side-right .strp-close {
+  top: 0;
+  right: 0; }
+
+/* line 86, ../../sass/libs/_strip.scss */
+.strp-side-left {
+  top: 0;
+  left: 0; }
+
+/* line 87, ../../sass/libs/_strip.scss */
+.strp-side-left .strp-pages {
+  top: 0;
+  left: 0; }
+
+/* line 88, ../../sass/libs/_strip.scss */
+.strp-side-left .strp-page {
+  top: 0;
+  left: 0; }
+
+/* line 89, ../../sass/libs/_strip.scss */
+.strp-side-left .strp-close {
+  top: 0;
+  right: 0; }
+
+/* line 91, ../../sass/libs/_strip.scss */
+.strp-side-top {
+  top: 0;
+  left: 0; }
+
+/* line 92, ../../sass/libs/_strip.scss */
+.strp-side-top .strp-pages {
+  top: 0;
+  left: 0; }
+
+/* line 93, ../../sass/libs/_strip.scss */
+.strp-side-top .strp-page {
+  top: 0;
+  left: 0; }
+
+/* line 94, ../../sass/libs/_strip.scss */
+.strp-side-top .strp-close {
+  top: 0;
+  right: 0; }
+
+/* line 96, ../../sass/libs/_strip.scss */
+.strp-side-bottom {
+  bottom: 0;
+  left: 0; }
+
+/* line 97, ../../sass/libs/_strip.scss */
+.strp-side-bottom .strp-pages {
+  bottom: 0;
+  left: 0; }
+
+/* line 98, ../../sass/libs/_strip.scss */
+.strp-side-bottom .strp-page {
+  bottom: 0;
+  left: 0; }
+
+/* line 99, ../../sass/libs/_strip.scss */
+.strp-side-bottom .strp-close {
+  top: 0;
+  right: 0; }
+
+/* line 101, ../../sass/libs/_strip.scss */
+.strp-page {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+/* line 107, ../../sass/libs/_strip.scss */
+.strp-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: #292929;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+/* youtube & vimeo use overlap:false, this adds padding
+   to make sure buttons don't overlap the content.
+   navbutton = 72 = 54 + (2 * 9 margin)
+   closebutton = 48
+*/
+/* line 127, ../../sass/libs/_strip.scss */
+.strp-no-overlap .strp-container {
+  padding: 48px 72px; }
+
+/* line 128, ../../sass/libs/_strip.scss */
+.strp-no-overlap.strp-no-sides .strp-container {
+  padding: 48px 0; }
+
+/* line 130, ../../sass/libs/_strip.scss */
+.strp-vertical .strp-no-overlap .strp-container {
+  padding: 0 72px; }
+
+/* line 131, ../../sass/libs/_strip.scss */
+.strp-vertical .strp-no-overlap.strp-no-sides .strp-container {
+  padding: 0 48px; }
+
+/* line 133, ../../sass/libs/_strip.scss */
+.strp-hovering-clickable .strp-container {
+  cursor: pointer; }
+
+/* line 136, ../../sass/libs/_strip.scss */
+.strp-content-element {
+  position: absolute;
+  top: 50%;
+  left: 50%; }
+
+/* line 142, ../../sass/libs/_strip.scss */
+.strp-content-element iframe {
+  float: left;
+  width: 100%;
+  height: 100%; }
+
+/* line 148, ../../sass/libs/_strip.scss */
+.strp-container img {
+  display: inline-block;
+  vertical-align: middle; }
+
+/* line 153, ../../sass/libs/_strip.scss */
+.strp-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #efefef;
+  font-size: 13px;
+  line-height: 20px;
+  background: #000;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none; }
+
+/* line 166, ../../sass/libs/_strip.scss */
+.strp-info-padder {
+  display: block;
+  overflow: hidden;
+  padding: 12px;
+  position: relative;
+  width: auto; }
+
+/* line 174, ../../sass/libs/_strip.scss */
+.strp-caption {
+  width: auto;
+  display: inline;
+  white-space: wrap; }
+
+/* line 180, ../../sass/libs/_strip.scss */
+.strp-position {
+  color: #b3b3b3;
+  float: right;
+  line-height: 21px;
+  opacity: 0.99;
+  position: relative;
+  text-align: right;
+  margin-left: 15px;
+  white-space: nowrap; }
+
+/* links */
+/* line 192, ../../sass/libs/_strip.scss */
+.strp-info a,
+.strp-info a:hover {
+  color: #ccc;
+  border: 0;
+  background: none;
+  text-decoration: underline; }
+
+/* line 199, ../../sass/libs/_strip.scss */
+.strp-info a:hover {
+  color: #eee; }
+
+/* < > */
+/* line 204, ../../sass/libs/_strip.scss */
+.strp-nav {
+  position: absolute;
+  top: 50%;
+  width: 54px;
+  height: 72px;
+  margin: 0 9px;
+  margin-top: -36px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+/* line 216, ../../sass/libs/_strip.scss */
+.strp-nav-previous {
+  left: 0; }
+
+/* line 217, ../../sass/libs/_strip.scss */
+.strp-nav-next {
+  right: 0;
+  left: auto; }
+
+/* line 219, ../../sass/libs/_strip.scss */
+.strp-nav-disabled {
+  cursor: default; }
+
+/* line 221, ../../sass/libs/_strip.scss */
+.strp-nav-button {
+  float: left;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+/* line 228, ../../sass/libs/_strip.scss */
+.strp-nav-button-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #101010; }
+
+/* line 236, ../../sass/libs/_strip.scss */
+.strp-nav-button-icon {
+  float: left;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  zoom: 1;
+  background-position: 50% 50%;
+  background-repeat: no-repeat; }
+
+/* X */
+/* line 248, ../../sass/libs/_strip.scss */
+.strp-close {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+/* line 258, ../../sass/libs/_strip.scss */
+.strp-close-background,
+.strp-close-icon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  height: 26px;
+  width: 26px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat; }
+
+/* line 269, ../../sass/libs/_strip.scss */
+.strp-close-background {
+  filter: alpha(opacity=80);
+  opacity: .8;
+  background-color: #101010; }
+
+/* line 274, ../../sass/libs/_strip.scss */
+.strp-close:hover .strp-close-background {
+  background-color: #161616; }
+
+/* line 277, ../../sass/libs/_strip.scss */
+.strp-has-error .strp-container {
+  background-color: #ca3434; }
+
+/* line 278, ../../sass/libs/_strip.scss */
+.strp-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 240px;
+  margin-left: -120px;
+  margin-top: -120px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("../img/strip-skins/strip/error.svg"); }
+
+/* line 290, ../../sass/libs/_strip.scss */
+.strp-no-svg .strp-error {
+  background-image: url("../img/strip-skins/strip/error.png"); }
+
+/* Spinner - loading icon, wrapped by a div that moves it */
+/* line 293, ../../sass/libs/_strip.scss */
+.strp-spinner-move {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 48px;
+  width: 0;
+  /* ensure overflow during a jQuery animation */
+  overflow: visible !important; }
+
+/* line 302, ../../sass/libs/_strip.scss */
+.strp-spinner-move.strp-vertical {
+  width: 48px;
+  height: 0; }
+
+/* line 304, ../../sass/libs/_strip.scss */
+.strp-spinner {
+  width: 48px;
+  height: 48px;
+  float: left;
+  position: relative; }
+
+/* different sides */
+/* line 312, ../../sass/libs/_strip.scss */
+.strp-spinner-move.strp-side-top {
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto; }
+
+/* line 313, ../../sass/libs/_strip.scss */
+.strp-spinner-move.strp-side-bottom {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: auto; }
+
+/* line 315, ../../sass/libs/_strip.scss */
+.strp-spinner-move.strp-side-right .strp-spinner {
+  margin-left: -48px; }
+
+/* line 316, ../../sass/libs/_strip.scss */
+.strp-spinner-move.strp-side-left .strp-spinner {
+  margin-right: -48px;
+  float: right; }
+
+/* line 317, ../../sass/libs/_strip.scss */
+.strp-spinner-move.strp-side-bottom .strp-spinner {
+  margin-top: -48px; }
+
+/* line 318, ../../sass/libs/_strip.scss */
+.strp-spinner-move.strp-side-top .strp-spinner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: -48px; }
+
+@-moz-keyframes strp-spinner-spin {
+  100% {
+    -moz-transform: rotate(360deg); } }
+@-webkit-keyframes strp-spinner-spin {
+  100% {
+    -webkit-transform: rotate(360deg); } }
+@keyframes strp-spinner-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+/* line 325, ../../sass/libs/_strip.scss */
+.strp-spinner-rotate,
+.strp-spinner-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/* line 334, ../../sass/libs/_strip.scss */
+.strp-spinner-line {
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  width: 2px;
+  margin-left: -1px;
+  height: 3px;
+  border-radius: 1px;
+  z-index: 80;
+  /* amount of lines, removed later on */
+  color: inherit;
+  /* color of the dots, inherited from text on the page */ }
+
+/*
+ * ===== Skin: strip =====
+ */
+/* < > */
+/* line 352, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip .strp-nav-button-background {
+  background-color: transparent; }
+
+/* line 353, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip .strp-nav-previous .strp-nav-button-icon {
+  background-image: url("../img/strip-skins/strip/previous.svg"); }
+
+/* line 354, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip .strp-nav-next .strp-nav-button-icon {
+  background-image: url("../img/strip-skins/strip/next.svg"); }
+
+/* IE7-8/no-svg (using a faded png) */
+/* line 356, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip.strp-no-svg .strp-nav-previous .strp-nav-button-icon {
+  background-image: url("../img/strip-skins/strip/previous-faded.png");
+  opacity: 1; }
+
+/* line 357, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip.strp-no-svg .strp-nav-next .strp-nav-button-icon {
+  background-image: url("../img/strip-skins/strip/next-faded.png");
+  opacity: 1; }
+
+/* line 359, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip .strp-nav .strp-nav-button-icon {
+  opacity: .6; }
+
+/* normal state */
+/* line 360, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip.strp-mobile-touch .strp-nav .strp-nav-button-icon {
+  opacity: 1; }
+
+/* mobile-touch always has normal states at full opacity */
+/* < > : hover */
+/* line 363, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip .strp-nav:hover .strp-nav-button-icon,
+.strp-window-skin-strip .strp-nav-hover .strp-nav-button-icon {
+  opacity: 1; }
+
+/* IE7-8/no-svg (unfaded png) */
+/* line 366, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip.strp-no-svg .strp-nav.strp-nav-previous:hover .strp-nav-button-icon,
+.strp-window-skin-strip.strp-no-svg .strp-nav-hover.strp-nav-previous .strp-nav-button-icon {
+  background-image: url("../img/strip-skins/strip/previous.png"); }
+
+/* line 368, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip.strp-no-svg .strp-nav.strp-nav-next:hover .strp-nav-button-icon,
+.strp-window-skin-strip.strp-no-svg .strp-nav-hover.strp-nav-next .strp-nav-button-icon {
+  background-image: url("../img/strip-skins/strip/next.png"); }
+
+/* Reduce < > button size on narrow screens (iPhone 6 and smaller) */
+@media all and (max-width: 375px) and (orientation: portrait), all and (max-height: 375px) and (max-width: 667px) {
+  /* line 374, ../../sass/libs/_strip.scss */
+  .strp-window-skin-strip .strp-nav {
+    width: 48px;
+    height: 60px;
+    margin: 0 5px;
+    margin-top: -30px; }
+
+  /* < > */
+  /* line 382, ../../sass/libs/_strip.scss */
+  .strp-window-skin-strip .strp-nav-previous .strp-nav-button-icon {
+    background-image: url("../img/strip-skins/strip/previous-small.svg"); }
+
+  /* line 383, ../../sass/libs/_strip.scss */
+  .strp-window-skin-strip .strp-nav-next .strp-nav-button-icon {
+    background-image: url("../img/strip-skins/strip/next-small.svg"); }
+
+  /* IE7-8/no-svg (using a faded png) */
+  /* line 385, ../../sass/libs/_strip.scss */
+  .strp-window-skin-strip.strp-no-svg .strp-nav-previous .strp-nav-button-icon {
+    background-image: url("../img/strip-skins/strip/previous-small-faded.png"); }
+
+  /* line 386, ../../sass/libs/_strip.scss */
+  .strp-window-skin-strip.strp-no-svg .strp-nav-next .strp-nav-button-icon {
+    background-image: url("../img/strip-skins/strip/next-small-faded.png"); }
+
+  /* IE7-8/no-svg (unfaded png) */
+  /* line 389, ../../sass/libs/_strip.scss */
+  .strp-window-skin-strip.strp-no-svg .strp-nav.strp-nav-previous:hover .strp-nav-button-icon,
+  .strp-window-skin-strip.strp-no-svg .strp-nav-hover.strp-nav-previous .strp-nav-button-icon {
+    background-image: url("../img/strip-skins/strip/previous-small.png"); }
+
+  /* line 391, ../../sass/libs/_strip.scss */
+  .strp-window-skin-strip.strp-no-svg .strp-nav.strp-nav-next:hover .strp-nav-button-icon,
+  .strp-window-skin-strip.strp-no-svg .strp-nav-hover.strp-nav-next .strp-nav-button-icon {
+    background-image: url("../img/strip-skins/strip/next-small.png"); }
+
+  /* also reduce padding
+     navbutton = 58 = 48 + (2 * 5 margin)
+     closebutton = 48
+   */
+  /* line 398, ../../sass/libs/_strip.scss */
+  .strp-no-overlap .strp-container {
+    padding: 48px 58px; }
+
+  /* line 399, ../../sass/libs/_strip.scss */
+  .strp-no-overlap.strp-no-sides .strp-container {
+    padding: 48px 0; }
+
+  /* line 401, ../../sass/libs/_strip.scss */
+  .strp-vertical .strp-no-overlap .strp-container {
+    padding: 0 58px; }
+
+  /* line 402, ../../sass/libs/_strip.scss */
+  .strp-vertical .strp-no-overlap.strp-no-sides .strp-container {
+    padding: 0 48px; } }
+/* X */
+/* line 406, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip .strp-close .strp-close-icon {
+  background-image: url("../img/strip-skins/strip/close.svg");
+  opacity: .8; }
+
+/* line 407, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip .strp-close:hover .strp-close-icon {
+  opacity: 1; }
+
+/* iOS 8.4.1 bug: when opacity changes it'll require 2 taps
+   force a single opacity to fix this
+*/
+/* line 411, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip.strp-mobile-touch .strp-close .strp-close-icon,
+.strp-window-skin-strip.strp-mobile-touch .strp-close:hover .strp-close-icon {
+  opacity: 1; }
+
+/* IE7-8/no-svg */
+/* line 415, ../../sass/libs/_strip.scss */
+.strp-window-skin-strip.strp-no-svg .strp-close .strp-close-icon {
+  background-image: url("../img/strip-skins/strip/close.png");
+  opacity: 1; }
+
+/* here's how to have content slide in with the window when opening and closing  */
+/*
+.strp-window-skin-strip.strp-side-left.strp-opening  .strp-page,
+.strp-window-skin-strip.strp-side-left.strp-closing  .strp-page { left: auto; right: 0; }
+.strp-window-skin-strip.strp-side-right.strp-opening  .strp-page,
+.strp-window-skin-strip.strp-side-right.strp-closing  .strp-page { left: 0; right: auto; }
+.strp-window-skin-strip.strp-side-top.strp-opening  .strp-page,
+.strp-window-skin-strip.strp-side-top.strp-closing  .strp-page { bottom: 0; top: auto; }
+.strp-window-skin-strip.strp-side-bottom.strp-opening  .strp-page,
+.strp-window-skin-strip.strp-side-bottom.strp-closing  .strp-page { bottom: auto; top: 0; }
+*/
+/* line 37, ../../sass/screen.scss */
 a {
   color: #673AB7;
   text-decoration: none; }
   /* line 87, ../../sass/libs/_mixins.scss */
   a:hover, a:focus, a:active {
     color: #491c99; }
-  /* line 41, ../../sass/screen.scss */
+  /* line 43, ../../sass/screen.scss */
   a:not(> img) {
     white-space: pre;
     white-space: pre-wrap;
@@ -8798,7 +9606,7 @@ a {
     white-space: -hp-pre-wrap;
     word-wrap: break-word; }
 
-/* line 46, ../../sass/screen.scss */
+/* line 48, ../../sass/screen.scss */
 .svg-wrapper {
   width: 100%;
   display: block;
@@ -8821,7 +9629,7 @@ a {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden; }
-  /* line 54, ../../sass/screen.scss */
+  /* line 56, ../../sass/screen.scss */
   .svg-wrapper svg {
     width: 100%;
     height: 100%;
@@ -8839,7 +9647,7 @@ a {
 /* ::Print */
 /* ------------------------------------------------------------ */
 @media print {
-  /* line 107, ../../sass/screen.scss */
+  /* line 109, ../../sass/screen.scss */
   body {
     line-height: 0.55em;
     font-size: 62.5%; } }
