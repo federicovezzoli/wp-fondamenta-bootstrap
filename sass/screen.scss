@@ -15,10 +15,6 @@ html {
 	font-size: 100%;
 	/* normalize text rendering */
 	-webkit-font-smoothing: antialiased;
-
-	@include respond-to-max(768px, $IE9: false) { // Stop at precise width, as we're talking about devices
-		-webkit-text-size-adjust: 100%;	// Stops text scaling in iOS.
-	}
 }
 
 body {
@@ -64,15 +60,14 @@ a {
 	}
 }
 
-// Use SASS globbing to import all _.scss files in the module folder.
-// These should be independent modules that follow the BEM/SMACSS way
-@import "modules/*";
-
-
 /* main container */
 .container {
 	@include clearfix;
 }
+
+// Use SASS globbing to import all _.scss files in the module folder.
+// These should be independent modules that follow the BEM/SMACSS way
+@import "modules/*";
 
 
 // ------------------------------------------------------------

@@ -75,12 +75,8 @@ html {
   font-size: 100%;
   /* normalize text rendering */
   -webkit-font-smoothing: antialiased; }
-  @media screen and (max-width: 767px) {
-    /* line 14, ../../sass/screen.scss */
-    html {
-      -webkit-text-size-adjust: 100%; } }
 
-/* line 24, ../../sass/screen.scss */
+/* line 20, ../../sass/screen.scss */
 body {
   background: white;
   color: #212121; }
@@ -8784,14 +8780,14 @@ input[type="checkbox"]:focus {
   font-size: 14px;
   font-weight: 900; }
 
-/* line 39, ../../sass/screen.scss */
+/* line 35, ../../sass/screen.scss */
 a {
   color: #673AB7;
   text-decoration: none; }
   /* line 87, ../../sass/libs/_mixins.scss */
   a:hover, a:focus, a:active {
     color: #491c99; }
-  /* line 45, ../../sass/screen.scss */
+  /* line 41, ../../sass/screen.scss */
   a:not(> img) {
     white-space: pre;
     white-space: pre-wrap;
@@ -8802,7 +8798,7 @@ a {
     white-space: -hp-pre-wrap;
     word-wrap: break-word; }
 
-/* line 50, ../../sass/screen.scss */
+/* line 46, ../../sass/screen.scss */
 .svg-wrapper {
   width: 100%;
   display: block;
@@ -8825,7 +8821,7 @@ a {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden; }
-  /* line 58, ../../sass/screen.scss */
+  /* line 54, ../../sass/screen.scss */
   .svg-wrapper svg {
     width: 100%;
     height: 100%;
@@ -8843,7 +8839,7 @@ a {
 /* ::Print */
 /* ------------------------------------------------------------ */
 @media print {
-  /* line 112, ../../sass/screen.scss */
+  /* line 107, ../../sass/screen.scss */
   body {
     line-height: 0.55em;
     font-size: 62.5%; } }

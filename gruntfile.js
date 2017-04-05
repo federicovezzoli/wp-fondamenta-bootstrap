@@ -44,7 +44,6 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'assets/js/plugins.min.js': [
-	        'assets/js/bootstrap.js',
             'assets/js/vendor/*.js'
           ],
           'assets/js/main.min.js': [
@@ -63,7 +62,6 @@ module.exports = function(grunt) {
       	},
 	     files: {
           'assets/js/plugins.min.js': [
-	        'assets/js/bootstrap.js',
             'assets/js/vendor/*.js'
           ],
           'assets/js/main.min.js': [
@@ -85,7 +83,6 @@ module.exports = function(grunt) {
       js: {
         files: [
           'assets/js/scritps_head/*.js',
-          'assets/js/bootstrap.js',
           'assets/js/inc/*.js',
           'assets/js/main.js',
           'assets/js/plugins.js'
