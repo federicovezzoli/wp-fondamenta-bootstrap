@@ -77,7 +77,7 @@ module.exports = function(grunt) {
     },
     watch: {
       compass: {
-		  files: ['sass/**/*.{scss}'],
+		  files: ['sass/**/*.{scss,sass}'],
 		  tasks: ['compass:dev']
 	  },
       js: {
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
         tasks: [ 'uglify:dev']
       },
       livereload: {
-		  files: ['sass/**/*.scss','assets/css/*.css', 'assets/js/**/*.js', '*.html', '*.php', 'lib/*.php', 'templates/*.php', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
+		  files: ['assets/css/*.css', 'assets/js/**/*.js', '*.html', '*.php', 'lib/*.php', 'templates/*.php', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
 		  options: {
 			  livereload: true,
 		},
