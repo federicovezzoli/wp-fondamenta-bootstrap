@@ -90,7 +90,7 @@ module.exports = function(grunt) {
         tasks: [ 'uglify:dev']
       },
       livereload: {
-		  files: ['assets/css/*.css', 'assets/js/**/*.js', '*.html', '*.php', 'lib/*.php', 'templates/*.php', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
+		  files: ['sass/**/*.scss','assets/css/*.css', 'assets/js/**/*.js', '*.html', '*.php', 'lib/*.php', 'templates/*.php', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
 		  options: {
 			  livereload: true,
 		},
