@@ -1,5 +1,4 @@
 # Require any additional compass plugins here.
-require 'bootstrap'
 require 'sass-globbing'
 require 'breakpoint'
 
