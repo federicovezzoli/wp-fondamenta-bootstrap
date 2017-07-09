@@ -181,7 +181,6 @@ function endpoint_recipe( WP_REST_Request $request ) {
   // Ingredienti principali
   //??
   foreach ($json_data["ingredienti_principali"] as $ingrediente_principale) {
-  	$ingrediente_principale["ingrediente"];
   	$ingrediente = strtolower($ingrediente_principale["ingrediente"]);
   	$ingrediente = str_replace(" ", "-", $ingrediente);
 
@@ -192,7 +191,10 @@ function endpoint_recipe( WP_REST_Request $request ) {
   // Portate
   //??
   foreach ($json_data["portate"] as $porata) {
-  	$portata["portata"];
+  	$portata_term = strtolower($portata["portata"];);
+  	$portata_term = str_replace(" ", "-", $portata_term);
+
+  	$ingredienti_terms_result = wp_set_object_terms($result, $portata_term, "portate", true);
   }
 
   //??
