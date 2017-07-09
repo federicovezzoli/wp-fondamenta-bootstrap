@@ -174,11 +174,18 @@ function endpoint_recipe( WP_REST_Request $request ) {
   	}
   }
 
+  //update or create the author
+  $result = wp_insert_post( $postarr,true);
+
   //??
   // Ingredienti principali
   //??
   foreach ($json_data["ingredienti_principali"] as $ingrediente_principale) {
   	$ingrediente_principale["ingrediente"];
+  	$ingrediente = strtolower($ingrediente_principale["ingrediente"]);
+  	$ingrediente = str_replace(" ", "-", $ingrediente);
+
+  	$ingredienti_terms_result = wp_set_object_terms($result, $ingrediente, "ingredienti_principali", true);
   }
 
   //??
@@ -210,8 +217,7 @@ function endpoint_recipe( WP_REST_Request $request ) {
   //update or create the locale
   //$result= wp_insert_post( $postarr,true);
 
-  //update or create the author
-  $result = wp_insert_post( $postarr,true);
+
 
   //handle any error
   if ( true ) {
