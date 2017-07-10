@@ -23,5 +23,3 @@ require_once locate_template('/lib/post-types.php'); 	  //post types
 require_once locate_template('/lib/tgm.php');          	  // Plugin dependencies
 require_once locate_template('/lib/dummytext.php');       // Dummy text
 require_once locate_template('/lib/svg.php');       // Dummy text
-
-require_once locate_template('/lib/api-filemaker.php');       // API endpoints for filemaker
