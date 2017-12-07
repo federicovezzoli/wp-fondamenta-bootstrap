@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 
 			// or
 			map: {
-				inline: false, // save all sourcemaps as separate files...
+				inline: true, // save all sourcemaps as separate files...
 				annotation: 'scss' // ...to this specified directory
 			},
 
@@ -133,7 +133,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
-  //grunt.loadNpmTasks('grunt-wp-version');
+  grunt.loadNpmTasks('grunt-wp-version');
 
   // Register tasks
   grunt.registerTask('default', [
@@ -141,7 +141,7 @@ module.exports = function(grunt) {
     'sass',
 	'postcss',
     'uglify:dist',
-    //'version'
+    'version'
   ]);
 
   grunt.registerTask('generateCSS', [
