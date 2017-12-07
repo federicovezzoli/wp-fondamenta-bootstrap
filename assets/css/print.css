@@ -1,65 +1,30 @@
-/* Welcome to Compass. Use this file to define print styles.
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+/* Welcome to Compass. Use this file to define print styles. Import this file using the following HTML or equivalent: <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+*, *:before, *:after { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
 
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle; }
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
 
-q, blockquote {
-  quotes: none; }
+q, blockquote { quotes: none; }
 
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
 
-a img {
-  border: none; }
+a img { border: none; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
 
-button, input {
-  line-height: normal; }
+button, input { line-height: normal; }
 
-button, input, select, textarea {
-  font-size: 100%;
-  margin: 0;
-  vertical-align: baseline;
-  *vertical-align: middle; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
 
-button, input[type="button"], input[type="reset"], input[type="submit"] {
-  cursor: pointer;
-  *overflow: visible; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; *overflow: visible; }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
-textarea {
-  overflow: auto;
-  vertical-align: top;
-  resize: vertical; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
 
-@media print {
-  body {
-    font-size: 62.5%;
-    line-height: 125%; } }
+@media print { body { font-size: 62.5%; line-height: 125%; } }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Njc3MvcHJpbnQuc2NzcyIsIi4uL3Njc3MvbGlicy9fcmVzZXQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7MkZBRTJGO0FDQzNGO0VBQXVCLCtCQUFzQjtVQUF0Qix1QkFBc0IsRUFBQTs7QUFFN0M7RUFBNmUsVUFBUztFQUFFLFdBQVU7RUFBRSxVQUFTO0VBQUUsY0FBYTtFQUFFLGdCQUFlO0VBQUUseUJBQXdCLEVBQUE7O0FBQ3ZrQjtFQUFRLDBCQUF5QjtFQUFFLGtCQUFpQixFQUFBOztBQUNwRDtFQUFrQixpQkFBZ0I7RUFBRSxvQkFBbUI7RUFBRSx1QkFBc0IsRUFBQTs7QUFDL0U7RUFBZ0IsYUFBWSxFQUFBOztBQUM1QjtFQUF5RCxZQUFXO0VBQUUsY0FBYSxFQUFBOztBQUNuRjtFQUFRLGFBQVksRUFBQTs7QUFDcEI7RUFBbUcsZUFBYyxFQUFBOztBQU1qSDtFQUFnQixvQkFBbUIsRUFBQTs7QUFDbkM7RUFBa0MsZ0JBQWU7RUFBRSxVQUFTO0VBQUUseUJBQXdCO0dBQUUsdUJBQXVCLEVBQUE7O0FBQy9HO0VBQTBFLGdCQUFlO0dBQUUsa0JBQWtCLEVBQUE7O0FBQzdHO0VBQW9ELFVBQVM7RUFBRSxXQUFVLEVBQUE7O0FBQ3pFO0VBQVcsZUFBYztFQUFFLG9CQUFtQjtFQUFFLGlCQUFnQixFQUFBOztBRFZoRTtFQUNDO0lBRUMsaUJBQThCO0lBQzlCLGtCQUFrQyxFQUFBLEVBQUEiLCJmaWxlIjoiLi4vYXNzZXRzL2Nzcy9wcmludC5jc3MiLCJzb3VyY2VzQ29udGVudCI6W251bGwsbnVsbF19 */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Njc3MvcHJpbnQuc2NzcyIsIi4uL3Njc3MvbGlicy9fcmVzZXQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSw4TUFFMkY7QUNDM0YsdUJBQXVCLCtCQUFzQixDQUF0Qix1QkFBc0IsRUFBQTs7QUFFN0MsNmVBQTZlLFVBQVMsQ0FBRSxXQUFVLENBQUUsVUFBUyxDQUFFLGNBQWEsQ0FBRSxnQkFBZSxDQUFFLHlCQUF3QixFQUFBOztBQUN2a0IsUUFBUSwwQkFBeUIsQ0FBRSxrQkFBaUIsRUFBQTs7QUFDcEQsa0JBQWtCLGlCQUFnQixDQUFFLG9CQUFtQixDQUFFLHVCQUFzQixFQUFBOztBQUMvRSxnQkFBZ0IsYUFBWSxFQUFBOztBQUM1Qix5REFBeUQsWUFBVyxDQUFFLGNBQWEsRUFBQTs7QUFDbkYsUUFBUSxhQUFZLEVBQUE7O0FBQ3BCLG1HQUFtRyxlQUFjLEVBQUE7O0FBTWpILGdCQUFnQixvQkFBbUIsRUFBQTs7QUFDbkMsa0NBQWtDLGdCQUFlLENBQUUsVUFBUyxDQUFFLHlCQUF3QixFQUFFLHVCQUF1QixFQUFBOztBQUMvRywwRUFBMEUsZ0JBQWUsRUFBRSxrQkFBa0IsRUFBQTs7QUFDN0csb0RBQW9ELFVBQVMsQ0FBRSxXQUFVLEVBQUE7O0FBQ3pFLFdBQVcsZUFBYyxDQUFFLG9CQUFtQixDQUFFLGlCQUFnQixFQUFBOztBRFZoRSxlQUNDLE9BRUMsaUJBQThCLENBQzlCLGtCQUFrQyxFQUFBLEVBQUEiLCJmaWxlIjoiLi4vYXNzZXRzL2Nzcy9wcmludC5jc3MiLCJzb3VyY2VzQ29udGVudCI6W251bGwsbnVsbF19 */
