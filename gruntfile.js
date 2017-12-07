@@ -28,11 +28,23 @@ module.exports = function(grunt) {
 		}
 	},
 
+	cssmin: {
+  		target: {
+    		files: [{
+      			expand: true,
+      			cwd: 'assets/css',
+      			src: ['*.css'],
+      			dest: 'assets/css',
+      			ext: '.css'
+    		}]
+  		}
+	},
+
 	postcss: {
 		options: {
 			map: {
 				inline: true, // save all sourcemaps as separate files...
-				annotation: 'maps' // ...to this specified directory
+				annotation: 'scss' // ...to this specified directory
 			},
 
 			processors: [
@@ -97,23 +109,29 @@ module.exports = function(grunt) {
         files: [
           'assets/js/scritps_head/*.js',
           'assets/js/inc/*.js',
+		  'assets/js/vendor/*.js',
           'assets/js/main.js',
           'assets/js/plugins.js'
         ],
-        tasks: [ 'uglify:dev']
+        tasks: [ 'uglify:dev'],
+		options: {
+			livereload: true
+		}
       },
 	  styles: {
   		  files: ['scss/**/*.scss'],
-  		  tasks: ['generateCSS']
-  	  },
-      livereload: {
-		  files: ['scss/**/*.scss', 'assets/css/*.css', 'assets/js/**/*.js', '*.html', '*.php', 'lib/*.php', 'templates/*.php', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
+  		  tasks: ['generateCSS'],
 		  options: {
-			  livereload: true,
-		},
-	  },
+			  livereload: true
+		  }
+  	  },
+      files: {
+		  files: ['*.html', '*.php', 'lib/*.php', 'templates/*.php', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
+		  options: {
+			  livereload: true
+		  }
+	  }
     },
-
     clean: {
     	dist: [
         	'assets/js/plugins.min.js',
@@ -131,23 +149,24 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-wp-version');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // Register tasks
   grunt.registerTask('default', [
     'clean',
     'sass',
 	'postcss',
+	'cssmin',
     'uglify:dist',
     'version'
   ]);
 
   grunt.registerTask('generateCSS', [
 	  'sass',
-	  'postcss',
+	  'postcss'
   ]);
 
   grunt.registerTask('dev', [
     'watch'
   ]);
-
 };
