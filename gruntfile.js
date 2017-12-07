@@ -30,12 +30,9 @@ module.exports = function(grunt) {
 
 	postcss: {
 		options: {
-			//				map: true, // inline sourcemaps
-
-			// or
 			map: {
 				inline: true, // save all sourcemaps as separate files...
-				annotation: 'scss' // ...to this specified directory
+				annotation: 'maps' // ...to this specified directory
 			},
 
 			processors: [

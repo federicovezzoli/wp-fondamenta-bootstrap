@@ -1,8 +1,5 @@
 .DS_Store
 /node_modules/
 .sass-cache
-/scss/screen.css.map
-/scss/print.css.map
-/assets/css/scss/screen.css.map
-/assets/css/scss/print.css.map
-/assets/css/scss/ie.css.map
+*.map
+
