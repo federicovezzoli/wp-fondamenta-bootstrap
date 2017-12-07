@@ -2387,6 +2387,4 @@ a { color: #673AB7; text-decoration: none; }
 /* main container */
 .container::after { display: block; clear: both; content: ""; }
 
-.content-info { background: purple; }
-
 /*# sourceMappingURL=screen.css.map */
