@@ -1,12 +1,9 @@
 // ::Imports pre-render. Must be after reset
 // ------------------------------------------------------------
-
-@import "libs/required";
 @import "libs/reset";
 @import "libs/settings";
 @import "libs/mixins";
-@import "libs/placeholders";
-@import "breakpoint";
+
 
 /* ::Base styles */
 /* ------------------------------------------------------------ */
@@ -28,7 +25,6 @@ body {
 
 @import "bootstrap-custom";					// bootstrap
 @import "libs/typography"; 					// Base level typography
-@import "add-ons/module-typeset"; 			// Specific typesetting
 @import "libs/forms";						// Forms
 @import "libs/iubenda"; 					// Iubenda
 @import "libs/bxslider"; 					// bxslider
@@ -41,7 +37,8 @@ a {
 		color: $action-respond;
 	}
 	&:not(>img) {
-		@include force-wrap;
+		//@include force-wrap;
+
 	}
 }
 
@@ -69,7 +66,10 @@ a {
 
 // Use SASS globbing to import all _.scss files in the module folder.
 // These should be independent modules that follow the BEM/SMACSS way
-@import "modules/*";
+@import "modules/footer";
+@import "modules/header";
+@import "modules/navigation";
+@import "modules/structure";
 
 
 // ------------------------------------------------------------
@@ -77,37 +77,31 @@ a {
 // ------------------------------------------------------------
 
 //Two
-@include breakpoint($b-vp) {
+@media (min-width: $b-vp) {
 
 }
 
 //Free
-@include breakpoint($c-vp) {
+@media (min-width: $c-vp) {
 
 }
 
 //Four
-@include breakpoint($d-vp) {
+@media (min-width: $d-vp) {
 
 }
 
 //Five
-@include breakpoint($e-vp) {
+@media (min-width: $e-vp) {
 
 }
 
 //Six
-@include breakpoint($f-vp) {
+@media (min-width: $f-vp) {
 
 }
 
+//Seven
+@media (min-width: $g-vp) {
 
-/* ::Print */
-/* ------------------------------------------------------------ */
-
-@media print {
-	body {
-		@include adjust-leading-to(2);
-		font-size: percentage(10 / 16);
-	}
 }

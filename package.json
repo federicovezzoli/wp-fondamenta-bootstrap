@@ -1,6 +1,7 @@
 {
   "name": "WP-Fondamenta-Bootstrap",
-  "version": "1.0.0",
+  "version": "1.8.0",
+  "private": true,
   "author": "DOT agency <federico@dot-agency.it>",
   "homepage": "http://dot-agency.it",
   "description": "Starter theme for WordPress + bootstrap",
@@ -22,8 +23,15 @@
     "grunt-contrib-clean": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-contrib-compass": "latest",
-    "grunt-wp-version": "latest"
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-wp-version": "latest",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "cssnano": "^3.10.0",
+    "autoprefixer": "^7.1.2",
+    "postcss-sorting": "^3.0.1",
+    "pixrem": "^3.0.2"
   }
 }

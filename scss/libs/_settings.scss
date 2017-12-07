@@ -21,6 +21,7 @@ $c-vp								: 600px;	// up two
 $d-vp								: 768px;    //: 900px;	// up three
 $e-vp							    : 992px;	//: 1100px;	// up four
 $f-vp								: 1200px;	//: 1300px;	// up five
+$g-vp								: 1440px;	//: 1300px;	// up five
 $ie-fixed-vp						: 980px;    // Viewport for IE fixed width
 
 $max-vp 							: $f-vp; 	// max viewport. Syntactically makes for a nicer option
@@ -97,10 +98,3 @@ $default-border-width 				: 1px;
 
 $internal-spacing-percent 			: 3%;		// Used by grid system
 $internal-spacing					: 40px; 	// Space internally with fixed measure
-
-
-
-// ------------------------------------------------------------
-// Add functional stuff
-// ------------------------------------------------------------
-@import "functions/functions";

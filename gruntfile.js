@@ -15,7 +15,49 @@ module.exports = function(grunt) {
         '!assets/js/head.min.js'
       ]
     },
-    compass: {                  // Task
+	sass: {
+		dist: {
+			files: [{
+				expand: true,
+				//cwd: '/',
+				src: ['scss/*.scss'],
+				dest: 'assets/css',
+				ext: '.css'
+			}]
+		}
+	},
+	postcss: {
+		options: {
+			//				map: true, // inline sourcemaps
+
+			// or
+			map: {
+				inline: false, // save all sourcemaps as separate files...
+				annotation: 'scss' // ...to this specified directory
+			},
+
+			processors: [
+				require('pixrem')(), // add fallbacks for rem units
+				require('autoprefixer')({
+					browsers: 'last 2 versions' // browsers: ['safari >= 9, ie >= 11, ie >= 8']
+				}), // add vendor prefixes
+				require('postcss-sorting')({
+					"sort-order": "default",
+					"empty-lines-between-children-rules": 0,
+					"empty-lines-between-media-rules": 0,
+					"preserve-empty-lines-between-children-rules": false
+				})
+			]
+		},
+		dist: {
+			expand: true,
+			flatten: true,
+			src: 'assets/css/**/*.css',
+			dest: 'assets/css'
+		}
+	},
+
+	/* compass: {                  // Task
     	dist: {                   // Target
 			options: {              // Target options
 				sassDir: 'sass',
@@ -39,7 +81,7 @@ module.exports = function(grunt) {
 				outputStyle: 'nested'
 			}
 		}
-	},
+	}, */
     uglify: {
       dist: {
         files: {
@@ -76,11 +118,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      compass: {
-		  files: ['sass/**/*.{scss,sass}'],
-		  tasks: ['compass:dev']
-	  },
-      js: {
+      scripts: {
         files: [
           'assets/js/scritps_head/*.js',
           'assets/js/inc/*.js',
@@ -89,8 +127,12 @@ module.exports = function(grunt) {
         ],
         tasks: [ 'uglify:dev']
       },
+	  styles: {
+  		  files: ['scss/**/*.scss'],
+  		  tasks: ['generateCSS']
+  	  },
       livereload: {
-		  files: ['assets/css/*.css', 'assets/js/**/*.js', '*.html', '*.php', 'lib/*.php', 'templates/*.php', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
+		  files: ['scss/**/*.scss', 'assets/css/*.css', 'assets/js/**/*.js', '*.html', '*.php', 'lib/*.php', 'templates/*.php', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
 		  options: {
 			  livereload: true,
 		},
@@ -110,20 +152,29 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-wp-version');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-postcss');
+  //grunt.loadNpmTasks('grunt-wp-version');
 
   // Register tasks
   grunt.registerTask('default', [
     'clean',
-    'compass:dist',
+    'sass',
+	'postcss',
     'uglify:dist',
     'version'
   ]);
 
+  grunt.registerTask('generateCSS', [
+	  'clean',
+	  'sass',
+	  'postcss',
+  ]);
+
   grunt.registerTask('dev', [
     'watch',
-    'compass'
+    'sass',
+	'postcss'
   ]);
 
 };

@@ -1,8 +1,10 @@
 // ------------------------------------------------------------
-// Footer module
+// Structure module
 // ------------------------------------------------------------
 
 // Place your BEM/SMACSS style .scss modules in the modules folder
+
+
 
 
 
@@ -15,26 +17,31 @@
 // ------------------------------------------------------------
 
 //Two
-@include breakpoint($b-vp) {
+@media (min-width: $b-vp) {
 
 }
 
 //Free
-@include breakpoint($c-vp) {
+@media (min-width: $c-vp) {
 
 }
 
 //Four
-@include breakpoint($d-vp) {
+@media (min-width: $d-vp) {
 
 }
 
 //Five
-@include breakpoint($e-vp) {
+@media (min-width: $e-vp) {
 
 }
 
 //Six
-@include breakpoint($f-vp) {
+@media (min-width: $f-vp) {
+
+}
+
+//Seven
+@media (min-width: $g-vp) {
 
 }
