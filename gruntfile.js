@@ -15,6 +15,7 @@ module.exports = function(grunt) {
         '!assets/js/head.min.js'
       ]
     },
+
 	sass: {
 		dist: {
 			files: [{
@@ -26,6 +27,7 @@ module.exports = function(grunt) {
 			}]
 		}
 	},
+
 	postcss: {
 		options: {
 			//				map: true, // inline sourcemaps
@@ -57,31 +59,6 @@ module.exports = function(grunt) {
 		}
 	},
 
-	/* compass: {                  // Task
-    	dist: {                   // Target
-			options: {              // Target options
-				sassDir: 'sass',
-				cssDir: 'assets/css',
-				imagesDir: 'assets/img',
-				javascriptsDir: 'assets/js',
-				fontsDir: 'assets/fonts',
-				environment: 'production',
-				outputStyle: 'compressed',
-				force: true
-			}
-		},
-		dev: {                    // Another target
-			options: {
-				sassDir: 'sass',
-				cssDir: 'assets/css',
-				imagesDir: 'assets/img',
-				javascriptsDir: 'assets/js',
-				fontsDir: 'assets/fonts',
-				environment: 'development',
-				outputStyle: 'nested'
-			}
-		}
-	}, */
     uglify: {
       dist: {
         files: {
@@ -117,6 +94,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     watch: {
       scripts: {
         files: [
@@ -138,13 +116,14 @@ module.exports = function(grunt) {
 		},
 	  },
     },
+
     clean: {
-      dist: [
-        'assets/js/plugins.min.js',
-        'assets/js/main.min.js',
-        'assets/js/head.min.js'
-      ]
-    }
+    	dist: [
+        	'assets/js/plugins.min.js',
+        	'assets/js/main.min.js',
+        	'assets/js/head.min.js'
+		]
+  	}
   });
 
   // Load tasks
@@ -162,19 +141,16 @@ module.exports = function(grunt) {
     'sass',
 	'postcss',
     'uglify:dist',
-    'version'
+    //'version'
   ]);
 
   grunt.registerTask('generateCSS', [
-	  'clean',
 	  'sass',
 	  'postcss',
   ]);
 
   grunt.registerTask('dev', [
-    'watch',
-    'sass',
-	'postcss'
+    'watch'
   ]);
 
 };

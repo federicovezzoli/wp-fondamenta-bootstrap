@@ -8267,4 +8267,7 @@ a {
   clear: both;
   content: ""; }
 
+.content-info {
+  background: purple; }
+
 /*# sourceMappingURL=../../scss/screen.css.map */
