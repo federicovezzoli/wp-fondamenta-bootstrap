@@ -110,7 +110,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: [
-          'assets/js/scritps_head/*.js',
+          'assets/js/head/*.js',
           'assets/js/inc/*.js',
 		  'assets/js/vendor/*.js',
           'assets/js/main.js',
