@@ -66,7 +66,8 @@ banner: {
 /*-----------------------------------------------------------------------------------*/
 
 
-/* 'use strict';
+/* 
+'use strict';
 
 var fs = require('fs'),
     path = require('path'),
@@ -81,7 +82,9 @@ module.exports = function(grunt) {
       js: 'assets/js/main.min.js',
       jsHandle: 'roots_main',
       jsPlugin: 'assets/js/plugins.min.js',
-      jsPluginHandle: 'roots_plugins'
+      jsPluginHandle: 'roots_plugins',
+	  jsHeadHandle: 'roots_head',
+	  jsHead: 'assets/js/head.min.js'
     });
 
     var scriptsPhp = options.file;
@@ -92,16 +95,19 @@ module.exports = function(grunt) {
     // Hash the JS
     var hashJs = md5(options.js);
     var hashPluginsJs = md5(options.jsPlugin);
+	var hashHeadJs = md5(options.jsHead);
 
     // Update scripts.php to reference the new versions
     var regexCss = new RegExp("(wp_enqueue_style\\('" + options.cssHandle + "',(\\s*[^,]+,){2})\\s*[^\\)]+\\);");
     var regexJs = new RegExp("(wp_register_script\\('" + options.jsHandle + "',(\\s*[^,]+,){2})\\s*[^,]+,\\s*([^\\)]+)\\);");
     var regexPluginsJs = new RegExp("(wp_register_script\\('" + options.jsPluginHandle + "',(\\s*[^,]+,){2})\\s*[^,]+,\\s*([^\\)]+)\\);");
+	var regexHeadJs = new RegExp("(wp_register_script\\('" + options.jsHeadHandle + "',(\\s*[^,]+,){2})\\s*[^,]+,\\s*([^\\)]+)\\);");
 
     var content = grunt.file.read(scriptsPhp);
     content = content.replace(regexCss, "$1 '" + hashCss + "');");
     content = content.replace(regexJs, "$1 '" + hashJs + "', " + "$3);");
     content = content.replace(regexPluginsJs, "$1 '" + hashPluginsJs + "', " + "$3);");
+	content = content.replace(regexHeadJs, "$1 '" + hashHeadJs + "', " + "$3);");
     grunt.file.write(scriptsPhp, content);
     grunt.log.writeln('"' + scriptsPhp + '" updated with new CSS/JS versions.');
   });
@@ -113,5 +119,6 @@ module.exports = function(grunt) {
     return hash.digest('hex');
   };
 };
+
 
 */

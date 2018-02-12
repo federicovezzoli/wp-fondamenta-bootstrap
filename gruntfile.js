@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 				expand: true,
 				//cwd: '/',
 				src: ['scss/*.scss'],
-				dest: 'assets/css',
+				dest: 'assets/css/',
 				ext: '.css'
 			}]
 		}
@@ -45,28 +45,41 @@ module.exports = function(grunt) {
 
 	postcss: {
 		options: {
-			map: {
-				inline: true, // save all sourcemaps as separate files...
-				annotation: 'scss' // ...to this specified directory
-			},
-
+			map: false,
 			processors: [
-				require('pixrem')(), // add fallbacks for rem units
-				require('autoprefixer')({
-					browsers: 'last 2 versions' // browsers: ['safari >= 9, ie >= 11, ie >= 8']
-				}), // add vendor prefixes
-				require('postcss-sorting')({
-					"sort-order": "default",
-					"empty-lines-between-children-rules": 0,
-					"empty-lines-between-media-rules": 0,
-					"preserve-empty-lines-between-children-rules": false
-				})
+				//require("postcss-import")(),
+				//require("postcss-url")(),
+				require("postcss-cssnext")(),
+				// and if you want to compress
+				// Disable autoprefixer, because it's already included in cssnext
+				//require("cssnano")({ autoprefixer: false }),
+				//require("postcss-browser-reporter")(),
+				//require("postcss-reporter")(),
 			]
 		},
 		dist: {
 			expand: true,
 			flatten: true,
-			src: 'assets/css/**/*.css',
+			src: 'assets/css/scss/*.css',
+			dest: 'assets/css'
+		},
+		dev: {
+			options: {
+				map: false,
+				processors: [
+					//require("postcss-import")(),
+					//require("postcss-url")(),
+					require("postcss-cssnext")(),
+					// and if you want to compress
+					// Disable autoprefixer, because it's already included in cssnext
+					//require("cssnano")({ autoprefixer: false }),
+					//require("postcss-browser-reporter")(),
+					//require("postcss-reporter")(),
+				]
+			},
+			expand: true,
+			flatten: true,
+			src: 'assets/css/scss/*.css',
 			dest: 'assets/css'
 		}
 	},
@@ -89,7 +102,8 @@ module.exports = function(grunt) {
       dev: {
       	options: {
 	      	beautify: true,
-	      	preserveComments: true
+	      	preserveComments: true,
+			mangle: false
       	},
 	     files: {
           'assets/js/plugins.min.js': [
@@ -123,7 +137,7 @@ module.exports = function(grunt) {
       },
 	  styles: {
   		  files: ['scss/**/*.scss'],
-  		  tasks: ['generateCSS'],
+  		  tasks: ['generateCSSdev'],
 		  options: {
 			  livereload: true
 		  }
@@ -158,7 +172,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'clean',
     'sass',
-	'postcss',
+	'postcss:dist',
 	'cssmin',
     'uglify:dist',
     'version'
@@ -166,7 +180,12 @@ module.exports = function(grunt) {
 
   grunt.registerTask('generateCSS', [
 	  'sass',
-	  'postcss'
+	  'postcss:dist'
+  ]);
+
+  grunt.registerTask('generateCSSdev', [
+	  'sass',
+	  'postcss:dev'
   ]);
 
   grunt.registerTask('dev', [
