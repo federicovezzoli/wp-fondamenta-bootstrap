@@ -1,6 +1,6 @@
 {
   "name": "WP-Fondamenta-Bootstrap",
-  "version": "1.8.0",
+  "version": "1.8.5",
   "private": true,
   "author": "DOT agency <federico@dot-agency.it>",
   "homepage": "http://dot-agency.it",
@@ -32,6 +32,7 @@
     "cssnano": "^3.10.0",
     "autoprefixer": "^7.1.2",
     "postcss-sorting": "^3.0.1",
+    "postcss-cssnext": "latest",
     "pixrem": "^3.0.2"
   }
 }
