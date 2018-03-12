@@ -1,10 +1,10 @@
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-12">
 		    <?php get_template_part('templates/page', 'header'); ?>
 		</div>
 
-		<div class="col-xs-12">
+		<div class="col-12">
 		  <?php if (!have_posts()) : ?>
 		    <div class="alert">
 		      <?php _e('Sorry, no results were found.', 'roots'); ?>
@@ -17,7 +17,7 @@
 		    <?php get_template_part('templates/content', get_post_format()); ?>
 		<?php endwhile; ?>
 
-		<div class="col-xs-12">
+		<div class="col-12">
 		  <?php if ($wp_query->max_num_pages > 1) : ?>
 		    <nav class="post-nav">
 		      <ul class="pager">
