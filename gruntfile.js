@@ -158,12 +158,11 @@ module.exports = function(grunt) {
 		  }
 	  }
     },
+    
     clean: {
-    	dist: [
-        	'assets/js/plugins.min.js',
-        	'assets/js/main.min.js',
-        	'assets/js/head.min.js'
-		]
+        folder: ['assets/css/scss'],
+		build: ['assets/js/plugins.js', 'assets/js/main.js', 'assets/js/head.js'],
+		build: ['assets/css/*.map']
   	}
   });
 
@@ -180,12 +179,12 @@ module.exports = function(grunt) {
 
   // Register tasks
   grunt.registerTask('default', [
-    'clean',
     'sass',
 	'postcss:dist',
 	'cssmin',
     'uglify:dist',
-    'version'
+    'version',
+    'clean'
   ]);
 
   grunt.registerTask('generateCSS', [
