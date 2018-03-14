@@ -166,7 +166,7 @@ module.exports = function(grunt) {
 
     clean: {
         folder: ['assets/css/scss'],
-		build: ['assets/js/plugins.js', 'assets/js/main.js', 'assets/js/head.js'],
+		build: ['assets/js/plugins.js', 'assets/js/head.js'],
 		build: ['assets/css/*.map']
   	},
 
