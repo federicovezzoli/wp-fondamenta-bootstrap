@@ -1,4 +1,9 @@
 'use strict';
+
+var fs = require('fs'),
+    path = require('path'),
+    crypto = require('crypto');
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -158,12 +163,48 @@ module.exports = function(grunt) {
 		  }
 	  }
     },
-    
+
     clean: {
         folder: ['assets/css/scss'],
 		build: ['assets/js/plugins.js', 'assets/js/main.js', 'assets/js/head.js'],
 		build: ['assets/css/*.map']
-  	}
+  	},
+
+	imagemin: {
+        dist: {
+			options: {
+			},
+            files: [{
+                expand: true,
+                cwd: 'assets/img/',
+                src: ['*.{png,jpg,gif}'],
+                dest: 'assets/img/'
+            }]
+        }
+    },
+
+	svgmin: {
+	    options: {
+	        plugins: {
+	            removeViewBox: false,
+				removeEmptyAttrs: true,
+				removeDesc: true,
+				removeComments: true,
+				removeMetadata: true,
+				removeTitle: true,
+				convertStyleToAttrs: true
+	        }
+	    },
+	    dist: {
+			files: [{
+                expand: true,
+                cwd: 'assets/img/',
+                src: ['*.{png,jpg,gif}'],
+                dest: 'assets/img/'
+            }]
+    	}
+	}
+
   });
 
   // Load tasks
@@ -173,9 +214,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-wp-version');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-svgmin');
 
   // Register tasks
   grunt.registerTask('default', [
@@ -184,7 +226,9 @@ module.exports = function(grunt) {
 	'cssmin',
     'uglify:dist',
     'version',
-    'clean'
+	'imagemin',
+	//'svgmin',
+	'clean'
   ]);
 
   grunt.registerTask('generateCSS', [
@@ -201,4 +245,49 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', [
     'watch'
   ]);
+
+  grunt.registerTask('version', 'Set the versions for enqueued CSS/JS', function() {
+    var options = this.options({
+      file: 'lib/scripts.php',
+      css: 'assets/css/screen.css',
+      cssHandle: 'roots_app',
+      js: 'assets/js/main.min.js',
+      jsHandle: 'roots_main',
+      jsPlugin: 'assets/js/plugins.min.js',
+      jsPluginHandle: 'roots_plugins',
+	  jsHeadHandle: 'roots_head',
+	  jsHead: 'assets/js/head.min.js'
+    });
+
+    var scriptsPhp = options.file;
+
+    // Hash the CSS
+    var hashCss = md5(options.css);
+
+    // Hash the JS
+    var hashJs = md5(options.js);
+    var hashPluginsJs = md5(options.jsPlugin);
+	var hashHeadJs = md5(options.jsHead);
+
+    // Update scripts.php to reference the new versions
+    var regexCss = new RegExp("(wp_enqueue_style\\('" + options.cssHandle + "',(\\s*[^,]+,){2})\\s*[^\\)]+\\);");
+    var regexJs = new RegExp("(wp_register_script\\('" + options.jsHandle + "',(\\s*[^,]+,){2})\\s*[^,]+,\\s*([^\\)]+)\\);");
+    var regexPluginsJs = new RegExp("(wp_register_script\\('" + options.jsPluginHandle + "',(\\s*[^,]+,){2})\\s*[^,]+,\\s*([^\\)]+)\\);");
+	var regexHeadJs = new RegExp("(wp_register_script\\('" + options.jsHeadHandle + "',(\\s*[^,]+,){2})\\s*[^,]+,\\s*([^\\)]+)\\);");
+
+    var content = grunt.file.read(scriptsPhp);
+    content = content.replace(regexCss, "$1 '" + hashCss + "');");
+    content = content.replace(regexJs, "$1 '" + hashJs + "', " + "$3);");
+    content = content.replace(regexPluginsJs, "$1 '" + hashPluginsJs + "', " + "$3);");
+	content = content.replace(regexHeadJs, "$1 '" + hashHeadJs + "', " + "$3);");
+    grunt.file.write(scriptsPhp, content);
+    grunt.log.writeln('"' + scriptsPhp + '" updated with new CSS/JS versions.');
+  });
+
+  var md5 = function(filepath) {
+	var hash = crypto.createHash('md5');
+	hash.update(fs.readFileSync(filepath));
+	grunt.log.write('Versioning ' + filepath + '...').ok();
+	return hash.digest('hex');
+  };
 };
