@@ -35,12 +35,21 @@ module.exports = function(grunt) {
   		target: {
     		files: [{
       			expand: true,
-      			cwd: 'assets/css',
+      			cwd: 'assets/css/scss/',
       			src: ['*.css'],
       			dest: 'assets/css',
       			ext: '.css'
     		}]
   		}
+	},
+
+	copy: {
+  		main: {
+    		expand: true,
+    		cwd: 'assets/css/scss/',
+    		src: '**',
+    		dest: 'assets/css',
+  		},
 	},
 
 	postcss: {
@@ -65,7 +74,7 @@ module.exports = function(grunt) {
 		},
 		dev: {
 			options: {
-				map: false,
+				map: true,
 				processors: [
 					//require("postcss-import")(),
 					//require("postcss-url")(),
@@ -143,7 +152,7 @@ module.exports = function(grunt) {
 		  }
   	  },
       files: {
-		  files: ['*.html', '*.php', 'lib/*.php', 'templates/*.php', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
+		  files: ['*.html', '*.php', 'lib/*.php', 'templates/*.php', 'assets/img/*'],
 		  options: {
 			  livereload: true
 		  }
@@ -167,6 +176,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-wp-version');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Register tasks
   grunt.registerTask('default', [
@@ -180,12 +190,13 @@ module.exports = function(grunt) {
 
   grunt.registerTask('generateCSS', [
 	  'sass',
-	  'postcss:dist'
+	  'postcss:dist',
   ]);
 
   grunt.registerTask('generateCSSdev', [
 	  'sass',
-	  'postcss:dev'
+	  'postcss:dev',
+	  'copy'
   ]);
 
   grunt.registerTask('dev', [
