@@ -4,8 +4,15 @@
 @import "libs/settings";
 @import "libs/mixins";
 
-/* ::Base styles */
+/* ::Import styles */
 /* ------------------------------------------------------------ */
+
+@import "bootstrap-custom";					// bootstrap
+@import "libs/typography"; 					// Base level typography
+@import "libs/forms";						// Forms
+@import "libs/iubenda"; 					// Iubenda
+//@import "libs/bxslider"; 					// bxslider
+//@import "libs/strip"; 						// strip
 
 html {
 	font-size: 100%;
@@ -18,16 +25,6 @@ body {
 	background: $body-color;
 	color: $base-color;
 }
-
-/* ::Import styles */
-/* ------------------------------------------------------------ */
-
-@import "bootstrap-custom";					// bootstrap
-@import "libs/typography"; 					// Base level typography
-@import "libs/forms";						// Forms
-@import "libs/iubenda"; 					// Iubenda
-//@import "libs/bxslider"; 					// bxslider
-//@import "libs/strip"; 						// strip
 
 a {
 	color: $action;

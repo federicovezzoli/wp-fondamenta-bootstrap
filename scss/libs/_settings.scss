@@ -47,6 +47,10 @@ $purple							: #673AB7;
 $blue							: #2196F3;
 $orange							: #FF9800;
 
+$easeIn: cubic-bezier(0.895, 0.030, 0.685, 0.220); /* easeInQuart */
+$easeOut: cubic-bezier(0.165, 0.840, 0.440, 1.000); /* easeOutQuart */
+$easeInOut: cubic-bezier(0.770, 0.000, 0.175, 1.000); /* easeInOutQuart */
+
 
 // Assign colours to variable roles
 // Be descriptive without being specific.

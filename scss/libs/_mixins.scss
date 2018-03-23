@@ -8,13 +8,10 @@
 	transition-timing-function: ease-in-out;
 }
 
-@mixin base_transition {
-	transition-property: all;
-	transition-duratio: 0.5s;
-	transition-timing-function: ease-in-out;
-	-webkit-backface-visibility: hidden;
-    -moz-backface-visibility:    hidden;
-    -ms-backface-visibility:     hidden;
+@mixin base_transition($property:all, $duration:0.4s) {
+	transition-property: $property;
+	transition-duration: $duration;
+	transition-timing-function: $easeInOut;
 }
 
 @mixin slow_transition {
