@@ -1,6 +1,6 @@
 {
   "name": "WP-Fondamenta-Bootstrap",
-  "version": "1.9.0",
+  "version": "1.9.5",
   "private": true,
   "author": "DOT agency <federico@dot-agency.it>",
   "homepage": "http://dot-agency.it",
@@ -24,16 +24,17 @@
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-postcss": "^0.8.0",
-    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-postcss": "latest",
+    "postcss-cssnext": "latest",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.2",
-    "cssnano": "^3.10.0",
-    "autoprefixer": "^7.1.2",
-    "postcss-sorting": "^3.0.1",
-    "postcss-cssnext": "latest",
-    "pixrem": "^3.0.2",
+    "autoprefixer": "latest",
     "grunt-contrib-copy": "latest",
-    "grunt-svgmin": "latest"
+    "grunt-contrib-imagemin": "latest",
+    "grunt-svgmin": "latest",
+    "postcss-import": "latest",
+    "postcss-url": "latest",
+    "postcss-browser-reporter": "latest",
+    "postcss-reporter": "latest"
   }
 }

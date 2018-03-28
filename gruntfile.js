@@ -61,40 +61,32 @@ module.exports = function(grunt) {
 		options: {
 			map: false,
 			processors: [
-				//require("postcss-import")(),
-				//require("postcss-url")(),
-				require("postcss-cssnext")(),
-				// and if you want to compress
-				// Disable autoprefixer, because it's already included in cssnext
-				//require("cssnano")({ autoprefixer: false }),
-				//require("postcss-browser-reporter")(),
-				//require("postcss-reporter")(),
+				require("postcss-import")(),
+				require("postcss-url")(),
+				require("postcss-cssnext")({
+					browsers: ['last 2 versions', 'ie 10']
+				}),
+				require("postcss-browser-reporter")(),
+				require("postcss-reporter")()
 			]
 		},
 		dist: {
-			expand: true,
-			flatten: true,
 			src: 'assets/css/scss/*.css',
-			dest: 'assets/css'
 		},
 		dev: {
 			options: {
 				map: true,
 				processors: [
-					//require("postcss-import")(),
-					//require("postcss-url")(),
-					require("postcss-cssnext")(),
-					// and if you want to compress
-					// Disable autoprefixer, because it's already included in cssnext
-					//require("cssnano")({ autoprefixer: false }),
-					//require("postcss-browser-reporter")(),
-					//require("postcss-reporter")(),
+					require("postcss-import")(),
+					require("postcss-url")(),
+					require("postcss-cssnext")({
+						browsers: ['last 2 versions', 'ie 10']
+					}),
+					require("postcss-browser-reporter")(),
+					require("postcss-reporter")()
 				]
 			},
-			expand: true,
-			flatten: true,
 			src: 'assets/css/scss/*.css',
-			dest: 'assets/css'
 		}
 	},
 
@@ -177,7 +169,7 @@ module.exports = function(grunt) {
             files: [{
                 expand: true,
                 cwd: 'assets/img/',
-                src: ['**/*.{png,jpg,gif}'],
+                src: ['*.{png,jpg,gif}'],
                 dest: 'assets/img/'
             }]
         }
@@ -199,7 +191,7 @@ module.exports = function(grunt) {
 			files: [{
                 expand: true,
                 cwd: 'assets/img/',
-                src: ['**/*.{png,jpg,gif}'],
+                src: ['*.{png,jpg,gif}'],
                 dest: 'assets/img/'
             }]
     	}
