@@ -24,11 +24,12 @@ module.exports = function(grunt) {
 	sass: {
 		dist: {
 			options: {
-				style: 'compact'
+				style: 'compact',
+				sourcemap: 'auto'
 			},
 			files: [{
 				expand: true,
-				//cwd: '/',
+				flatten: true,
 				src: ['scss/*.scss'],
 				dest: 'assets/css/',
 				ext: '.css'
@@ -40,7 +41,7 @@ module.exports = function(grunt) {
   		target: {
     		files: [{
       			expand: true,
-      			cwd: 'assets/css/scss/',
+      			cwd: 'assets/css',
       			src: ['*.css'],
       			dest: 'assets/css',
       			ext: '.css'
@@ -53,29 +54,14 @@ module.exports = function(grunt) {
     		expand: true,
     		cwd: 'assets/css/scss/',
     		src: '**',
-    		dest: 'assets/css',
+    		dest: 'assets/css/',
   		},
 	},
 
 	postcss: {
-		options: {
-			map: false,
-			processors: [
-				require("postcss-import")(),
-				require("postcss-url")(),
-				require("postcss-cssnext")({
-					browsers: ['last 2 versions', 'ie 10']
-				}),
-				require("postcss-browser-reporter")(),
-				require("postcss-reporter")()
-			]
-		},
 		dist: {
-			src: 'assets/css/scss/*.css',
-		},
-		dev: {
 			options: {
-				map: true,
+				map: false,
 				processors: [
 					require("postcss-import")(),
 					require("postcss-url")(),
@@ -86,7 +72,7 @@ module.exports = function(grunt) {
 					require("postcss-reporter")()
 				]
 			},
-			src: 'assets/css/scss/*.css',
+			src: 'assets/css/*.css',
 		}
 	},
 
@@ -229,9 +215,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('generateCSSdev', [
-	  'sass',
-	  'postcss:dev',
-	  'copy'
+	  'sass'
   ]);
 
   grunt.registerTask('dev', [
