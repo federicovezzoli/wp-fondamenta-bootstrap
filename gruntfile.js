@@ -41,7 +41,7 @@ module.exports = function(grunt) {
   		target: {
     		files: [{
       			expand: true,
-      			cwd: 'assets/css',
+      			cwd: 'assets/css/temp/',
       			src: ['*.css'],
       			dest: 'assets/css',
       			ext: '.css'
@@ -52,9 +52,9 @@ module.exports = function(grunt) {
 	copy: {
   		main: {
     		expand: true,
-    		cwd: 'assets/css/scss/',
-    		src: '**',
-    		dest: 'assets/css/',
+    		cwd: 'assets/css/',
+    		src: '*.css',
+    		dest: 'assets/css/temp/',
   		},
 	},
 
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
           ],
           'assets/js/head.min.js': [
           	'assets/js/head/*.js'
-          ]
+		]
 
         }
       }
@@ -143,7 +143,7 @@ module.exports = function(grunt) {
     },
 
     clean: {
-        folder: ['assets/css/scss'],
+        folder: ['assets/css/scss', 'assets/css/temp'],
 		build: ['assets/js/plugins.js', 'assets/js/head.js'],
 		build: ['assets/css/*.map']
   	},
@@ -201,6 +201,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'sass',
 	'postcss:dist',
+	'copy',
 	'cssmin',
     'uglify:dist',
     'version',
@@ -210,12 +211,12 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('generateCSS', [
-	  'sass',
-	  'postcss:dist',
+	'sass',
+	'postcss:dist',
   ]);
 
   grunt.registerTask('generateCSSdev', [
-	  'sass'
+	'sass'
   ]);
 
   grunt.registerTask('dev', [
