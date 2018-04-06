@@ -143,9 +143,8 @@ module.exports = function(grunt) {
     },
 
     clean: {
-        folder: ['assets/css/scss', 'assets/css/temp'],
-		build: ['assets/js/plugins.js', 'assets/js/head.js'],
-		build: ['assets/css/*.map']
+        folder: ['assets/css/temp'],
+		build: ['assets/js/plugins.js', 'assets/js/head.js', 'assets/css/*.map']
   	},
 
 	imagemin: {
